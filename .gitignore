@@ -38,3 +38,10 @@ coverage.xml
 
 # Superior text editors
 subl
+
+# Something better than just editors
+.idea/
+.ropeproject/
+
+# Git merge artifacts
+*.orig
