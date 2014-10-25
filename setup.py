@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 
 from marx import __version__
 import glob
+import sys
 
 README = "README.md"
 
@@ -25,6 +26,11 @@ def hydrate_examples():
 
 hydrate_examples()
 
+if "test" in sys.argv or "nosetests" in sys.argv:
+    TEST_REQS = ['nose>=1.0', 'coverage==3.6', 'nosexcover', 'mock']
+else:
+    TEST_REQS = []
+
 setup(
     name="marx",
     version=__version__,
@@ -35,7 +41,7 @@ setup(
     license="BSD",
     packages=find_packages(exclude=["tests.*", "tests"]),
     long_description=read(README),
-    setup_requires=['nose>=1.0', 'coverage==3.6', 'nosexcover', 'mock'],
+    setup_requires=TEST_REQS,
     test_suite='nose.collector',
     classifiers=[
         "License :: OSI Approved :: BSD License",
