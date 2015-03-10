@@ -14,6 +14,7 @@ Example
 You'll find the [full example](./tests/workflow/example_1.py) in the tests/ directory.
 
 ```python
+    """
     This defines a workflow around the imperative: "Throw a Pie".
     
     In a simple system this is about 5 lines of code. But in others,
@@ -156,4 +157,5 @@ You'll find the [full example](./tests/workflow/example_1.py) in the tests/ dire
         # Ensure that our ThrowPieWorkflowC did not modify its components
         assert EmptyWorkflow.steps == []
         assert ThrowThingStep not in ThrowPieWorkflowC_A.steps
+    
 ```
