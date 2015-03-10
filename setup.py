@@ -9,10 +9,8 @@ README = "README.md"
 base = os.path.dirname(__file__)
 local = lambda x: os.path.join(base, x)
 
-
 def read(fname):
     return open(local(fname)).read()
-
 
 def hydrate_examples():
     examples = {}
@@ -26,8 +24,10 @@ def hydrate_examples():
 
 hydrate_examples()
 
+#     setup_requires=['nose>=1.0', 'coverage>=3.6', 'nosexcover', 'mock'],
+
 setup(
-    name="marx",
+    name="marx-workflows",
     version=__version__,
     author="Nino Walker",
     author_email="nino.walker@gmail.com",
@@ -36,14 +36,10 @@ setup(
     license="BSD",
     packages=find_packages(exclude=["tests.*", "tests"]),
     long_description=read(README),
-    setup_requires=[
-        'nose>=1.0',
-        'coverage>=3.6',
-        'nosexcover',
-        'mock'
-    ],
     test_suite='nose.collector',
     classifiers=[
         "License :: OSI Approved :: BSD License",
     ],
 )
+
+
