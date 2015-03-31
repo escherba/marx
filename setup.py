@@ -32,7 +32,7 @@ else:
     TEST_REQS = []
 
 setup(
-    name="marx",
+    name="marx-workflows",
     version=__version__,
     author="Nino Walker",
     author_email="nino.walker@gmail.com",
@@ -41,7 +41,7 @@ setup(
     license="BSD",
     packages=find_packages(exclude=["tests.*", "tests"]),
     long_description=read(README),
-    setup_requires=TEST_REQS,
+    setup_requires=TEST_REQS + ['wheel'],
     test_suite='nose.collector',
     classifiers=[
         "License :: OSI Approved :: BSD License",
