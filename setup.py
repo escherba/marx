@@ -1,7 +1,5 @@
 import os
 from setuptools import setup, find_packages
-
-from marx import __version__
 import glob
 
 README = "README.md"
@@ -28,7 +26,7 @@ hydrate_examples()
 
 setup(
     name="marx-workflows",
-    version=__version__,
+    version='0.0.9',
     author="Nino Walker",
     author_email="nino.walker@gmail.com",
     description=read(README).split("\n", 1)[0],
@@ -41,5 +39,3 @@ setup(
         "License :: OSI Approved :: BSD License",
     ],
 )
-
-

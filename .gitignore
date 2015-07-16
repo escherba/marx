@@ -45,3 +45,6 @@ subl
 
 # Git merge artifacts
 *.orig
+
+# virtualenv
+env/
