@@ -1,6 +1,7 @@
 import os
 from setuptools import setup, find_packages
 import glob
+import sys
 
 README = "README.md"
 
@@ -22,7 +23,10 @@ def hydrate_examples():
 
 hydrate_examples()
 
-#     setup_requires=['nose>=1.0', 'coverage>=3.6', 'nosexcover', 'mock'],
+if "test" in sys.argv or "nosetests" in sys.argv:
+    TEST_REQS = ['nose>=1.0', 'coverage==3.6', 'nosexcover', 'mock']
+else:
+    TEST_REQS = []
 
 setup(
     name="marx-workflows",
@@ -34,6 +38,7 @@ setup(
     license="BSD",
     packages=find_packages(exclude=["tests.*", "tests"]),
     long_description=read(README),
+    setup_requires=TEST_REQS + ['wheel'],
     test_suite='nose.collector',
     classifiers=[
         "License :: OSI Approved :: BSD License",
